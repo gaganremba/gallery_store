@@ -1,0 +1,12 @@
+<div class="row">
+    <% @pictures.each do |picture| %>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <%=link_to image_tag(picture.image.url(:thumb)),picture%>
+              <div class="caption">
+                <h5><%= picture.title %></h5>
+              </div>
+            </div>
+        </div>
+    <% end %>  
+</div>

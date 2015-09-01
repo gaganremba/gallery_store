@@ -1,0 +1,22 @@
+<div class="row">
+     <div class="col-md-offset-2 col-md-8 center">
+          <div class="panel panel-default center">
+                <div class="panel-heading ">
+                   <%= @picture.title %> 
+                   <span class="float-right">
+                    <strong>By: <%= @picture.user.email %></strong> <br />   
+                  </span>
+                </div>
+                <div class="panel-body">
+                  <%= image_tag  @picture.image.url(:normal)%>
+                </div>  
+                <div class="panel-footer">
+                  <% if user_signed_in? && current_user == @picture.user %>
+                    <%= link_to 'Edit', edit_picture_path(@picture) %> |
+                  <% end %>  
+                    <%= link_to "Back", :back %>
+                </div>  
+            </div>  
+        </div>
+    </div>
+</div>    
